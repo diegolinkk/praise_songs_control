@@ -1,0 +1,46 @@
+*** Controle de louvores ***
+
+---------------------------------------
+features básicas
+    feito em bootstrap 4
+    lista louvores
+        geral
+        agitadas
+        adoração
+    cadastro de louvores
+    edita louvores
+    apaga louvores (esse apenas pelo admin)
+    tem controle de usuário com login/senha
+    tem link para abrir o cifraclub (esse vai direto pro site mesmo)
+
+---------------------------------------
+features futuras
+    futuramente terá um campo de favoritos mas não sei como implantaria
+    futuramente gostaria de fazer um orderby por campos importantes como número de pasta, por artista e por 
+
+---------------------------------------
+model de louvores
+    descrição: 
+        tem um counter simples de ensaiado/tocado
+        tem o tom (esse é um txt simples)
+        tem um campo de observações simples
+
+    id
+    numero_da_pasta (este é um campo opcional)
+    nome
+    estilo (aqui eu acho que pode ter mas provavelmente vou seguir tendo agitado, adoração e agitado/adoração)
+    ritmo (opcional)
+    vezes_tocada
+    vezes_ensaiada
+    tom
+    banda (chave estrangeira muitos para muitos)
+    favoritado_usuario (chave estrangeira muitos para muitos da tabela padrão 'user')
+    link para o cifraclub
+
+---------------------------------------
+model de banda
+    id
+    nome
+    ritmo(lista)
+    louvor (chave estrangeira muitos para muitos)
+    link para o cifraclub

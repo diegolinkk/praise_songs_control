@@ -1,0 +1,17 @@
+a fazer
+---------------------------------------
+    implantar bootstrap
+    fazer a model de louvores
+    fazer a model de bandas
+    fazer o admin
+    fazer lista de louvores gerais
+    fazer lista de louvores agitados
+    fazer lista de louvores de adoração
+    fazer view de louvor único com opção de edit
+
+
+
+fazendo
+---------------------------------------
+feito
+---------------------------------------
