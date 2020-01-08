@@ -1,6 +1,5 @@
 a fazer
 ---------------------------------------
-    fazer o admin
     fazer lista de louvores gerais
     fazer lista de louvores agitados
     fazer lista de louvores de adoração
@@ -8,8 +7,6 @@ a fazer
 
 fazendo
 ---------------------------------------
-    fazer a model de louvores
-    fazer a model de bandas
 
 feito
 ---------------------------------------
@@ -17,3 +14,6 @@ feito
     instalar dependencias  no requirements
     criar app do django
     implantar bootstrap
+    fazer a model de louvores
+    fazer a model de bandas
+    fazer o admin
