@@ -1,0 +1,7 @@
+# exemplos de relacionamento muitos para muitos. 
+davi = Banda.objects.get(nome='Davi Soares')
+louvor = Louvor.objects.get(id=1)
+
+# Nesse caso, eu registrei o relacionamento no louvor e por isso _se foi pra banda
+louvor.banda.all()
+davi.louvor_set.all()
