@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-br">
+  {%load static %}
+  <head>
+    <!-- Required meta tags -->
+    <title>Pasta de Louvores</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'songs/bootstrap.min.css'%}">
+    <!-- Esse style precisa para não deixar a nav fixa sobrepor os textos iniciais -->
+    <style>
+      body{
+        padding-top: 5rem;
+      }
+    </style>
+
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Praise Songs Control</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Louvores <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Bandas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Oi Calebe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Oi Calebe</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <main role="main" class="container">
+      {% block content%}
+      {% endblock content%}
+    </main>
+    <script src="{% static 'songs/jquery-3.4.1.min.js' %}" ></script>
+    <script src="{% static 'songs/bootstrap.bundle.min.js' %}" ></script>
+  </body>
+</html>
