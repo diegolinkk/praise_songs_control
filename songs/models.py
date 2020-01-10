@@ -35,7 +35,7 @@ class Louvor(models.Model):
     tem um campo de observações simples"""
 
     nome = models.CharField(max_length=50)
-    numero_da_pasta = models.CharField(max_length=10,blank=True,default='sem numero')
+    numero_da_pasta = models.CharField(max_length=10,blank=True,default='0')
     estilo = models.CharField(max_length=20,choices=ESTILOS,default=ESTILOS[0][0])
     ritmo = models.CharField(max_length=20,choices=RITMO,default=RITMO[0][0])
     vezes_tocada = models.IntegerField(default=0)

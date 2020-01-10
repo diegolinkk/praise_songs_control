@@ -1,64 +1,23 @@
 {% extends 'songs/base.html' %}
 {%block content%}
-<table class="table">
+<table class="table" id="tabelaOrdenada">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Número Pasta</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Banda</th>
+        <th scope="col">Link</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      {% for louvor in louvores %}
+        <tr>
+          <th scope="row">{{louvor.numero_da_pasta}}</th>
+          <td>{{louvor.nome}}</td>
+          <td><a href="{% url 'banda_musicas' louvor.banda.all.0.id %}"> {{louvor.banda.all.0}} </a></td>
+          <td><a href="{{louvor.link_cifra}}" target="_blank">cifra</a></td>
+        </tr>
+      {% endfor %}
     </tbody>
   </table>
 {%endblock content%}

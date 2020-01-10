@@ -1,8 +1,8 @@
 a fazer
 ---------------------------------------
-    fazer lista de louvores gerais
     fazer lista de louvores agitados
     fazer lista de louvores de adoração
+    fazer lista para ensaiar/tocar louvor (abre lista só com os dois edits)
     fazer view de louvor único com opção de edit
 
 fazendo
@@ -17,3 +17,4 @@ feito
     fazer a model de louvores
     fazer a model de bandas
     fazer o admin
+    fazer lista de louvores gerais
