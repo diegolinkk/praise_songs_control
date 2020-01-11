@@ -5,3 +5,8 @@ louvor = Louvor.objects.get(id=1)
 # Nesse caso, eu registrei o relacionamento no louvor e por isso _se foi pra banda
 louvor.banda.all()
 davi.louvor_set.all()
+
+
+#agitados e adoração
+ agitados = Louvor.objects.filter(estilo='agitado')
+ agitados = Louvor.objects.filter(estilo='adoracao')

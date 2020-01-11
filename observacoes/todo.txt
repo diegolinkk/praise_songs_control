@@ -1,15 +1,17 @@
 a fazer
 ---------------------------------------
-    fazer lista de louvores agitados
-    fazer lista de louvores de adoração
-    fazer lista para ensaiar/tocar louvor (abre lista só com os dois edits)
     fazer view de louvor único com opção de edit
+    fazer login
+    colocar @login_required no sistema
 
 fazendo
 ---------------------------------------
 
 feito
 ---------------------------------------
+    fazer lista de louvores agitados
+    fazer lista de louvores de adoração
+    fazer lista para ensaiar/tocar louvor (abre lista só com os dois edits)
     instalar django
     instalar dependencias  no requirements
     criar app do django

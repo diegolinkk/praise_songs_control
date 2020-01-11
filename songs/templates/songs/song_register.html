@@ -1,0 +1,23 @@
+{% extends 'songs/base.html' %}
+{%block content%}
+<table class="table" id="tabelaOrdenada">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Número Pasta</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Vezes Tocada</th>
+        <th scope="col">Vezes Ensaiada</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for louvor in louvores %}
+        <tr>
+          <th scope="row">{{louvor.numero_da_pasta}}</th>
+          <td>{{louvor.nome}}</td>
+          <td> {{louvor.vezes_tocada}} <a href="{% url 'tocar' louvor.id %}" class="badge badge-primary"> tocar </a></td>
+          <td> {{louvor.vezes_ensaiada}}<a href="{% url 'ensaiar' louvor.id %}" class="badge badge-info"> ensaiar </a> </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{%endblock content%}
