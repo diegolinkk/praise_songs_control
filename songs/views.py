@@ -3,7 +3,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from .models import Louvor,Banda
-from .forms import LouvorForm
+from .forms import LouvorForm,BandaForm
 from django.db.models import Q
 
 # Create your views here.
@@ -43,6 +43,22 @@ def banda_musicas(request,id_banda):
     }
     return render(request,'songs/song_list.html',context=context)
 
+def banda_cadastro(request):
+
+    if request.method =='POST':
+        form = BandaForm(data = request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('index'))
+
+
+    form = BandaForm()
+    context = {
+        'form':form
+    }
+    return render(request,'songs/band.html',context= context)
+    
+
 def ensaio(request):
     louvores = Louvor.objects.all().order_by('vezes_tocada','vezes_ensaiada')
     context = {
@@ -79,5 +95,19 @@ def louvor(request,id_louvor):
     context = {
         'louvor': louvor,
         'form': form,
+    }
+    return render(request,'songs/louvor.html',context=context)
+
+def louvor_cadastro(request):
+    form = LouvorForm()
+
+    if request.method == 'POST':
+        form = LouvorForm(data = request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('index'))
+
+    context = {
+        'form':form,
     }
     return render(request,'songs/louvor.html',context=context)

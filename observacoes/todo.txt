@@ -1,14 +1,16 @@
 a fazer
 ---------------------------------------
-    fazer login com loginview - https://docs.djangoproject.com/en/3.0/topics/auth/default/#django.contrib.auth.views.LoginView
-    colocar @login_required no sistema
     fazer deploy
 
 fazendo
 ---------------------------------------
+    fazer login com loginview - https://docs.djangoproject.com/en/3.0/topics/auth/default/#django.contrib.auth.views.LoginView
+    colocar @login_required no sistema
 
 feito
 ---------------------------------------
+    inserção de bandas
+    inserção de louvores
     fazer view de louvor único com opção de edit
     fazer lista de louvores agitados
     fazer lista de louvores de adoração

@@ -10,3 +10,6 @@ davi.louvor_set.all()
 #agitados e adoração
  agitados = Louvor.objects.filter(estilo='agitado')
  agitados = Louvor.objects.filter(estilo='adoracao')
+
+ #quantos louvores uma banda tem
+ banda.louvor_set.all().count()

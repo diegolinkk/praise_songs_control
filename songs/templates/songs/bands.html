@@ -1,17 +1,18 @@
 {% extends 'songs/base.html' %}
 {%block content%}
+<a id="novo" class="btn btn-primary" href="{% url 'banda_cadastro' %}">Nova Banda</a>
 <table class="table" id="tabelaOrdenada">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Nome da Banda</th>
-        <th scope="col">Músicas</th>
+        <th scope="col">Músicas - qtd </th>
       </tr>
     </thead>
     <tbody>
       {% for banda in bandas %}
         <tr>
           <td>{{banda.nome}}</td>
-          <td><a href="{% url 'banda_musicas' banda.id %}">Músicas</a></td>
+          <td><a href="{% url 'banda_musicas' banda.id %}">Músicas - {{ banda.louvor_set.all.count}}</a></td>
         </tr>
       {% endfor %}
     </tbody>
