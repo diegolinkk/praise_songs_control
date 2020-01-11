@@ -1,0 +1,15 @@
+{%extends 'songs/base.html' %}
+{% load bootstrap4 %}
+
+{% block content%}
+    <h2>Edição de Louvor </h2>
+    <form action="#" method="post">
+        {% csrf_token %}
+        
+        {% bootstrap_form form %}
+
+        {% buttons %}
+        <button name='submit' class='btn btn-primary'> Enviar</button>
+        {% endbuttons %}
+    </form>
+{% endblock content%}

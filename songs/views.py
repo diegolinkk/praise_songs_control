@@ -3,6 +3,8 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from .models import Louvor,Banda
+from .forms import LouvorForm
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
@@ -13,14 +15,14 @@ def index(request):
     return render(request,'songs/song_list.html',context=context)
 
 def agitados(request):
-    louvores = Louvor.objects.filter(estilo='agitado')
+    louvores = Louvor.objects.filter(Q(estilo='agitado_adoracao') | Q(estilo='agitado'))
     context = {
     "louvores": louvores,
     }
     return render(request,'songs/song_list.html',context=context)
 
 def adoracao(request):
-    louvores = Louvor.objects.filter(estilo='adoracao')
+    louvores = Louvor.objects.filter(Q(estilo='agitado_adoracao') | Q(estilo='adoracao'))
     context = {
     "louvores": louvores,
     }
@@ -60,3 +62,22 @@ def tocar(request,id_louvor):
     louvor.vezes_tocada +=1
     louvor.save()
     return HttpResponseRedirect(reverse('ensaio'))
+
+def louvor(request,id_louvor):
+    louvor = Louvor.objects.get(id=id_louvor)
+
+    if request.method == 'POST':
+        form = LouvorForm(instance = louvor, data = request.POST)
+        if form.is_valid():
+            form.save()
+            # return HttpResponseRedirect(reverse('louvor',args= [id_louvor])) #caso precisar permanecer no form
+            return HttpResponseRedirect(reverse('index'))
+
+    form = LouvorForm(instance=louvor)
+    #falta regra de salvar em post
+
+    context = {
+        'louvor': louvor,
+        'form': form,
+    }
+    return render(request,'songs/louvor.html',context=context)

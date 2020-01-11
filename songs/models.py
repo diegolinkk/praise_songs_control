@@ -43,7 +43,8 @@ class Louvor(models.Model):
     tom = models.CharField(max_length=10,blank=True,default='Original')
     link_cifra = models.URLField(max_length=300)
     favoritado_usuario = models.ManyToManyField(User,blank=True) #usando o próprio modelo padrão de usuário
-    banda = models.ManyToManyField(Banda,blank=True)
+    observacoes = models.CharField(max_length=100,blank=True)
+    banda = models.ForeignKey(Banda,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
