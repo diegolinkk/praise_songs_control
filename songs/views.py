@@ -5,8 +5,10 @@ from django.urls import reverse
 from .models import Louvor,Banda
 from .forms import LouvorForm,BandaForm
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def index(request):
     louvores = Louvor.objects.all()
     context = {
@@ -14,6 +16,7 @@ def index(request):
     }
     return render(request,'songs/song_list.html',context=context)
 
+@login_required
 def agitados(request):
     louvores = Louvor.objects.filter(Q(estilo='agitado_adoracao') | Q(estilo='agitado'))
     context = {
@@ -21,6 +24,7 @@ def agitados(request):
     }
     return render(request,'songs/song_list.html',context=context)
 
+@login_required
 def adoracao(request):
     louvores = Louvor.objects.filter(Q(estilo='agitado_adoracao') | Q(estilo='adoracao'))
     context = {
@@ -28,6 +32,7 @@ def adoracao(request):
     }
     return render(request,'songs/song_list.html',context=context)
 
+@login_required
 def bandas(request):
     bandas = Banda.objects.all().order_by('nome')
     context = {
@@ -35,6 +40,7 @@ def bandas(request):
     }
     return render(request,'songs/bands.html',context=context)
 
+@login_required
 def banda_musicas(request,id_banda):
     banda = Banda.objects.get(id=id_banda)
     louvores = banda.louvor_set.all
@@ -43,6 +49,7 @@ def banda_musicas(request,id_banda):
     }
     return render(request,'songs/song_list.html',context=context)
 
+@login_required
 def banda_cadastro(request):
 
     if request.method =='POST':
@@ -58,27 +65,29 @@ def banda_cadastro(request):
     }
     return render(request,'songs/band.html',context= context)
     
-
+@login_required
 def ensaio(request):
-    louvores = Louvor.objects.all().order_by('vezes_tocada','vezes_ensaiada')
+    louvores = Louvor.objects.all().order_by('vezes_tocada')
     context = {
         "louvores": louvores,
     }
     return render(request,'songs/song_register.html',context=context)
 
+@login_required
 def ensaiar(request,id_louvor):
     louvor = Louvor.objects.get(id=id_louvor)
     louvor.vezes_ensaiada +=1
     louvor.save()
     return HttpResponseRedirect(reverse('ensaio'))
 
-
+@login_required
 def tocar(request,id_louvor):
     louvor = Louvor.objects.get(id=id_louvor)
     louvor.vezes_tocada +=1
     louvor.save()
     return HttpResponseRedirect(reverse('ensaio'))
 
+@login_required
 def louvor(request,id_louvor):
     louvor = Louvor.objects.get(id=id_louvor)
 
@@ -98,6 +107,7 @@ def louvor(request,id_louvor):
     }
     return render(request,'songs/louvor.html',context=context)
 
+@login_required
 def louvor_cadastro(request):
     form = LouvorForm()
 

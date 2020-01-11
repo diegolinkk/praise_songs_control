@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('',views.index,name='index'), #exibe lista geral
@@ -12,5 +13,6 @@ urlpatterns = [
     path('ensaiar/<int:id_louvor>/',views.ensaiar,name='ensaiar'), #grava +1 ensaio
     path('tocar/<int:id_louvor>/',views.tocar,name='tocar'), #grava +1 tocado
     path('louvor/<int:id_louvor>/',views.louvor,name='louvor'), #exibe detalhes do louvor + permite edição
-    path('louvor/cadastro',views.louvor_cadastro,name='louvor_cadastro') # cadastro de novos louvors
+    path('louvor/cadastro',views.louvor_cadastro,name='louvor_cadastro'), # cadastro de novos louvors
+    path('login/',LoginView.as_view(template_name= 'songs/login.html'),name='login'), #pagina de login - essa nao precisa de view pq ja importa uma
 ]

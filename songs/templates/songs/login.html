@@ -1,0 +1,14 @@
+{% extends 'songs/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <h2>Login</h2>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary"> logar </button>
+        {% endbuttons%}
+        <input type="hidden" name="next" value="{% url 'index' %}">
+    </form>
+{% endblock content %}

@@ -4,11 +4,11 @@ a fazer
 
 fazendo
 ---------------------------------------
-    fazer login com loginview - https://docs.djangoproject.com/en/3.0/topics/auth/default/#django.contrib.auth.views.LoginView
-    colocar @login_required no sistema
 
 feito
 ---------------------------------------
+    colocar @login_required no sistema
+    fazer login com loginview - https://docs.djangoproject.com/en/3.0/topics/auth/default/#django.contrib.auth.views.LoginView
     inserção de bandas
     inserção de louvores
     fazer view de louvor único com opção de edit
