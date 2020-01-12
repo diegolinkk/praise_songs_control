@@ -11,3 +11,9 @@ Aplicações wsgi não tem por natureza a funcionalidade de servir arquivos est�
 chamada dj-static (a documentação sugeriu que se alterasse o wsgi fazendo um import e uma config de cling)
 Obs: no pythonanywhere, é sugerido fazer uso do white noise mas que aparentemente não se faz necessário até o momento
 Obs2 : coloquei o STATIC_ROOT = 'staticfiles' que nem existia no meu settings.py (por orientação do dj-static)
+Obs3: após as configurações de arquivos estáticos, eu habilitei o DISABLE_COLLECTSTATIC alterando sua variável de ambiente para 0
+
+
+Por fim eu alterei a versão do Python pelo runtime (atualização de segurança) e criei um superuser
+
+heroku run python manage.py createsuperuser
