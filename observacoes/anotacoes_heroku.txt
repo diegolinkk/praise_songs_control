@@ -6,3 +6,8 @@ Outra coisa que deu bastante trabalho foi o Procfile que deveria estar com algum
 Heroku não carrega arquivos estaticos automaticamente. Precisei desabilitar a config estática para fazer o deploy sem essa etapa
 heroku config:set DISABLE_COLLECTSTATIC=1 desabilita a coleta de estáticos no primeiro deploy
 heroku run python manage.py migrate isso eu preciso rodar assim que toda a aplicação estiver ok (encontrando o banco de dados)
+
+Aplicações wsgi não tem por natureza a funcionalidade de servir arquivos estáticos. Para contornar isso (sem precisar de um nginx/S3), utilizamos uma biblioteca
+chamada dj-static (a documentação sugeriu que se alterasse o wsgi fazendo um import e uma config de cling)
+Obs: no pythonanywhere, é sugerido fazer uso do white noise mas que aparentemente não se faz necessário até o momento
+Obs2 : coloquei o STATIC_ROOT = 'staticfiles' que nem existia no meu settings.py (por orientação do dj-static)
