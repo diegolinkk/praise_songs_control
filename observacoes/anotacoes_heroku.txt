@@ -17,3 +17,12 @@ Obs3: após as configurações de arquivos estáticos, eu habilitei o DISABLE_CO
 Por fim eu alterei a versão do Python pelo runtime (atualização de segurança) e criei um superuser
 
 heroku run python manage.py createsuperuser
+
+
+Backup
+
+Para fazer backup, eu consigo criar dumps facilmente pelo heroku e baixar o arquivo por la mesmo.
+
+Para fazer o import, eu crio uma database sendo que o dono da database pode ser exatamente o usuário criado do postgres (pelo menos aqui ele deu erro na primeira vez pq o usuário não existia). 
+
+clica com o direito na database > Restore > seleciona o arquivo, pronto (da pra ver se houveram erros ou não diretamente pelo pgadmin

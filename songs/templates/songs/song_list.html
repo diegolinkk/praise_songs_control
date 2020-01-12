@@ -12,8 +12,16 @@
     </thead>
     <tbody>
       {% for louvor in louvores %}
+        {% if louvor.tem_slide %}
+          oi
+        {% endif %}
         <tr>
-          <td><a href="{% url 'louvor' louvor.id %}">{{louvor.nome}} - {{louvor.numero_da_pasta}} </a></td>
+          <td>
+          <!-- se tem slide, pinta de uma cor, se não tem, pinta de outra -->
+          <a href="{% url 'louvor' louvor.id %} " {%if louvor.tem_slide is False %} class="text-secondary" {% endif %}>
+            {{louvor.nome}} - {{louvor.numero_da_pasta}} 
+          </a>
+        </td>
           <td><a href="{% url 'banda_musicas' louvor.banda.id %}"> {{louvor.banda.nome}} </a></td>
           <td><a href="{{ louvor.link_cifra }}" target="_blank">cifra</a></td>
         </tr>

@@ -44,6 +44,7 @@ class Louvor(models.Model):
     link_cifra = models.URLField(max_length=300)
     favoritado_usuario = models.ManyToManyField(User,blank=True) #usando o próprio modelo padrão de usuário
     observacoes = models.CharField(max_length=100,blank=True)
+    tem_slide = models.BooleanField(default=False)
     banda = models.ForeignKey(Banda,on_delete=models.CASCADE)
 
     def __str__(self):
