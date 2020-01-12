@@ -1,0 +1,8 @@
+precisei instalar gunicorn
+heroku precisa do requirements .txt
+preciso criar o procfile com os dados que está nele
+precisei ajustar praticamente todas as configs de ambiente no heroku. Lembrando que os dados de database do heroku são diferentes da local
+Outra coisa que deu bastante trabalho foi o Procfile que deveria estar com algum problema de digitação ou encoding. Copiei de um fornecido pelo proprio heroku
+Heroku não carrega arquivos estaticos automaticamente. Precisei desabilitar a config estática para fazer o deploy sem essa etapa
+heroku config:set DISABLE_COLLECTSTATIC=1 desabilita a coleta de estáticos no primeiro deploy
+heroku run python manage.py migrate isso eu preciso rodar assim que toda a aplicação estiver ok (encontrando o banco de dados)

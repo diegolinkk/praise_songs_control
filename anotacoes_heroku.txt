@@ -1,3 +1,0 @@
-precisei instalar gunicorn
-heroku precisa do requirements .txt
-preciso criar o procfile com os dados que está nele
